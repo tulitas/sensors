@@ -15,7 +15,6 @@ import java.sql.*;
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "app.repositories"})
 @Configuration
 public class Application extends SpringBootServletInitializer {
 

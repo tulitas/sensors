@@ -17,9 +17,7 @@ public class OptionsController {
 
     private  MetricRepository metricRepository;
 
-    public OptionsController(MetricRepository metricRepository) {
-        this.metricRepository = metricRepository;
-    }
+
 
     public OptionsController() {
 
