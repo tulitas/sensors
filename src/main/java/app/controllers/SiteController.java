@@ -8,9 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class SiteController {
     @RequestMapping("/")
-    public String index() {
-//        return new ModelAndView("index");
-        return "hello";
+    public ModelAndView index() {
+        return new ModelAndView("index");
     }
 
 

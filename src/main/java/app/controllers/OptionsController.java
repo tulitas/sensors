@@ -1,23 +1,36 @@
 package app.controllers;
 
+import app.models.Metrics;
 import app.proces.MakeConnection;
+import app.repositories.MetricRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 @Controller
 @RequestMapping(name = "/")
 public class OptionsController {
+
     private MakeConnection makeConnection;
 
-    @GetMapping(value = "/take")
-    private String getAllMetrics(Model model) {
-        System.out.println("bum");
-        System.out.println("bum");
-        return "/";
+    private  MetricRepository metricRepository;
 
+    public OptionsController(MetricRepository metricRepository) {
+        this.metricRepository = metricRepository;
+    }
+
+    public OptionsController() {
+
+    }
+
+
+    @GetMapping(value = "/take")
+    public List<Metrics> getAllMetrics() {
+        System.out.println("sss");
+        System.out.println(metricRepository.findAll());
+        return (List<Metrics>) metricRepository.findAll();
     }
 
 }

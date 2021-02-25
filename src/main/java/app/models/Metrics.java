@@ -7,9 +7,9 @@ import java.io.Serializable;
 @Table(name = "metrics")
 public class Metrics implements Serializable {
     @Id
-    @Column(name = "metric_id")
+
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long metric_id;
+    private Integer metric_id;
 
     @Column(name = "metric_name")
     private String metric_name;
@@ -25,7 +25,7 @@ public class Metrics implements Serializable {
         return metric_id;
     }
 
-    public void setMetric_id(long metric_id) {
+    public void setMetric_id(Integer metric_id) {
         this.metric_id = metric_id;
     }
 
